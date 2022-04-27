@@ -2,7 +2,7 @@
 
 ## Live Preview
 
-[Link]()
+[Link](https://alura-challenge1.netlify.app/)
 
 ## Techonologies
 
