@@ -1,24 +1,12 @@
 # alura-challenge1
 
-## Project setup
-```
-npm install
-```
+## Live Preview
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+[Link]()
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Techonologies
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- Vue
+- HTML
+- CSS
+- Bootstrap
