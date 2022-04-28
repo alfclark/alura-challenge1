@@ -17,7 +17,7 @@
             <p>Sólo letras minúsculas y sin acentos</p>
           </div>
           <div class="buttons">
-            <button class="clear">Clear</button>
+            <button @click="clearData" class="clear">Clear</button>
             <div class="actionButtons">
               <button class="encrypt" @click="encryptData">Encriptar</button>
               <button class="decrypt" @click="decryptData">Desencriptar</button>
@@ -42,7 +42,53 @@
 </template>
 
 <script>
-export default {};
+import CryptoJS from "crypto-js";
+export default {
+  data() {
+    return {
+      inputData: "",
+      secret: "123#$%",
+      encData: "",
+      show: "",
+    };
+  },
+  methods: {
+    encryptData() {
+      if (this.inputData.length) {
+        const data = CryptoJS.AES.encrypt(
+          this.inputData,
+          this.secret
+        ).toString();
+
+        localStorage.setItem("secretData", data);
+
+        this.getEncryptedData();
+        this.show = "hide";
+      }
+    },
+
+    decryptData() {
+      const secretData = localStorage.getItem("secretData");
+      const decryptData = CryptoJS.AES.decrypt(
+        secretData,
+        this.secret
+      ).toString(CryptoJS.enc.Utf8);
+
+      alert("Mensaje Desencriptado: " + decryptData);
+    },
+
+    clearData() {
+      // remove data from localStorage
+      this.inputData = "";
+      this.show = "";
+      this.encData = "";
+    },
+
+    getEncryptedData() {
+      this.encData = localStorage.getItem("secretData");
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -192,6 +238,9 @@ export default {};
   margin-top: 0.5rem;
   width: 60%;
   text-align: center;
+}
+.hide {
+  display: none;
 }
 
 @media screen and (max-width: 768px) {
