@@ -17,7 +17,7 @@
             <p>Sólo letras minúsculas y sin acentos</p>
           </div>
           <div class="buttons">
-            <button @click="clearData" class="clear">Clear</button>
+            <button @click="clearData" class="clear">Limpiar</button>
             <div class="actionButtons">
               <button class="encrypt" @click="encryptData">Encriptar</button>
               <button class="decrypt" @click="decryptData">Desencriptar</button>
@@ -28,7 +28,10 @@
     </div>
     <div class="outputScreen">
       <div class="card">
-        <p>{{ encData }}</p>
+        <p class="outputData">
+          El mensaje encriptado es: <br />
+          {{ encData }}
+        </p>
         <div class="message" :class="show">
           <img class="doll" src="@/assets/doll.png" alt="" />
           <h3 class="cardMsg">Ningún mensaje fue encontrado</h3>
@@ -218,6 +221,10 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.outputData {
+  color: var(--darkBlue);
+  text-align: center;
 }
 .message {
   display: flex;
