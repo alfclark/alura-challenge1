@@ -28,8 +28,8 @@
     </div>
     <div class="outputScreen">
       <div class="card">
+        <h3 class="hide" :class="hide">El mensaje encriptado es:</h3>
         <p class="outputData">
-          El mensaje encriptado es: <br />
           {{ encData }}
         </p>
         <div class="message" :class="show">
@@ -53,6 +53,7 @@ export default {
       secret: "123#$%",
       encData: "",
       show: "",
+      hide: "",
     };
   },
   methods: {
@@ -67,6 +68,7 @@ export default {
 
         this.getEncryptedData();
         this.show = "hide";
+        this.hide = "show";
       }
     },
 
@@ -85,6 +87,7 @@ export default {
       this.inputData = "";
       this.show = "";
       this.encData = "";
+      this.hide = "";
     },
 
     getEncryptedData() {
@@ -225,6 +228,9 @@ export default {
 .outputData {
   color: var(--darkBlue);
   text-align: center;
+  max-width: calc(100% - 90px);
+  word-break: break-all;
+  overflow-y: auto;
 }
 .message {
   display: flex;
@@ -249,16 +255,23 @@ export default {
 .hide {
   display: none;
 }
+.show {
+  display: flex;
+}
 
 @media screen and (max-width: 768px) {
   .container {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 5rem;
   }
   .inputScreen {
     width: 100%;
-    height: 60vh;
+    height: 40vh;
+  }
+  .textarea {
+    font-size: 12px;
+    height: 300px;
   }
   .card {
     width: calc(100% - 80px);
