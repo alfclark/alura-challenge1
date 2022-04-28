@@ -10,3 +10,4 @@
 - HTML
 - CSS
 - Bootstrap
+- CryptoJS
