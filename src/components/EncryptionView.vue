@@ -258,7 +258,7 @@ export default {
 .show {
   display: flex;
 }
-
+/* RESPONSIVE SECTION */
 @media screen and (max-width: 768px) {
   .container {
     display: flex;
