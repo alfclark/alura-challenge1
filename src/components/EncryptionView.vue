@@ -113,12 +113,12 @@ export default {
   align-items: center;
 }
 .logoSection {
-  padding: 2rem 0;
+  padding: 0.5rem;
   display: flex;
   width: 100%;
 }
 .logo {
-  height: 40px;
+  height: 50px;
 }
 .inputSection {
   display: flex;
