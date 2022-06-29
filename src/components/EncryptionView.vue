@@ -8,19 +8,19 @@
         <textarea
           class="textarea"
           v-model="inputData"
-          placeholder="Ingrese el texto aquí"
+          placeholder="Enter the text here"
           required
         ></textarea>
         <div class="send">
           <div class="btnMessage">
             <i class="fa-solid fa-circle-exclamation"></i>
-            <p>Sólo letras minúsculas y sin acentos</p>
+            <p>Only lowercase and no accentuation</p>
           </div>
           <div class="buttons">
-            <button @click="clearData" class="clear">Limpiar</button>
+            <button @click="clearData" class="clear">Clear</button>
             <div class="actionButtons">
-              <button class="encrypt" @click="encryptData">Encriptar</button>
-              <button class="decrypt" @click="decryptData">Desencriptar</button>
+              <button class="encrypt" @click="encryptData">Encrypt</button>
+              <button class="decrypt" @click="decryptData">Decrypt</button>
             </div>
           </div>
         </div>
@@ -28,16 +28,14 @@
     </div>
     <div class="outputScreen">
       <div class="card">
-        <h3 class="hide" :class="hide">El mensaje encriptado es:</h3>
+        <h3 class="hide" :class="hide">The encrypted message is:</h3>
         <p class="outputData">
           {{ encData }}
         </p>
         <div class="message" :class="show">
           <img class="doll" src="@/assets/doll.png" alt="" />
-          <h3 class="cardMsg">Ningún mensaje fue encontrado</h3>
-          <p class="desc">
-            Ingresa el texto que deseas Encriptar o Desencriptar
-          </p>
+          <h3 class="cardMsg">No message</h3>
+          <p class="desc">Enter the text you want to Encrypt or Decrypt</p>
         </div>
       </div>
     </div>
