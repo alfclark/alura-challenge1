@@ -1,5 +1,5 @@
 <template>
-  <EncryptionView msg="Welcome to Your Vue.js App" />
+  <EncryptionView />
 </template>
 
 <script>
